@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EULA — AIVA Browser</title>
+<meta name="description" content="End-user license terms for AIVA Browser, including the current status of the source code's license." />
+<link rel="canonical" href="https://REPLACE_WITH_PRODUCTION_DOMAIN/eula.html" />
+<link rel="icon" href="assets/favicon-64.png" />
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0a0a0a" id="themeColorMeta" />
+<script>
+  (function () {
+    var saved = localStorage.getItem('aiva-theme');
+    var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="nav-brand" aria-label="AIVA Browser home">
+      <span class="brand-mark"><img src="assets/aiva-logo-small.png" alt="" width="20" height="20" loading="lazy" /></span>
+      <span class="brand-name">AIVA <em>Browser</em></span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <a href="index.html" class="back-link">← Back to site</a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <button id="themeToggle" class="theme-toggle" aria-label="Switch to light theme">
+      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><line x1="12" y1="2" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+      <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="policy-hero">
+    <div class="section-inner section-inner-narrow">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="tag">Legal</span></div>
+      <h1 class="section-title" style="font-size:clamp(2rem,4vw,2.75rem);">End User License Agreement</h1>
+      <p class="tag policy-updated">Last updated 2026-07-30 · Early-access product</p>
+    </div>
+  </section>
+
+  <article class="prose">
+    <div class="callout">
+      <strong>The short version</strong>
+      The source is publicly visible on GitHub, but that alone doesn't grant you a license to reuse, modify, or redistribute it. No open-source license has been published for this repository yet. Until one is, all rights are reserved by the author — you're welcome to look, run it locally, and file issues, but not to redistribute your own copy.
+    </div>
+
+    <h2>1. Ownership</h2>
+    <p>AIVA Browser — including its code, design, and the "AIVA" name and mark — is owned by its author(s) at AIVA Freelancia. Making the repository public does not, by itself, transfer or license any rights beyond what's stated here.</p>
+
+    <h2>2. What you're allowed to do today</h2>
+    <ul>
+      <li><strong>View the source.</strong> The repository is public on GitHub.</li>
+      <li><strong>Clone and run it locally</strong> for your own personal evaluation, following the setup steps in the repository's README.</li>
+      <li><strong>File issues or suggestions</strong> through GitHub.</li>
+    </ul>
+
+    <h2>3. What you're not licensed to do yet</h2>
+    <ul>
+      <li>Redistribute the software, a fork of it, or a packaged build to others.</li>
+      <li>Use it as the basis of a commercial product or service.</li>
+      <li>Represent a modified version as official AIVA Browser.</li>
+    </ul>
+    <p>These restrictions exist because no license granting broader reuse rights has been published — not because we've decided against open-sourcing it. A formal license (and an update to this page) is planned; check the <a href="index.html#faq">FAQ</a> or the GitHub repository for the current status.</p>
+
+    <h2>4. Third-party components</h2>
+    <p>AIVA Browser is built on open-source components (Electron, FastAPI, MediaPipe, and others) that carry their own licenses. See <a href="open-source.html">Open Source Notices</a> for the list.</p>
+
+    <h2>5. No warranty</h2>
+    <p>The software is provided "as is," with no warranty of any kind. See the <a href="terms.html">Terms of Service</a> for the full disclaimer.</p>
+
+    <h2>6. Termination</h2>
+    <p>This license (such as it is) ends automatically if you violate it — for example, by redistributing the software without permission.</p>
+
+    <h2>Questions</h2>
+    <p>If you want to use AIVA Browser's code in a way not covered here — including in a way that would help push us toward publishing a real open-source license — email <a href="mailto:aivafreelancia2026@gmail.com">aivafreelancia2026@gmail.com</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner">
+    <div class="divider-row"></div>
+    <div class="footer-bottom">
+      <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="eula.html" style="color:hsl(var(--text));">EULA</a>
+        <a href="open-source.html">Open Source</a>
+      </div>
+      <div>&copy; <span id="year"></span> AIVA Freelancia. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

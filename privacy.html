@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — AIVA Browser</title>
+<meta name="description" content="What AIVA Browser sends to third parties, what stays on your machine, and why — written in plain language for an early-access product." />
+<link rel="canonical" href="https://REPLACE_WITH_PRODUCTION_DOMAIN/privacy.html" />
+<link rel="icon" href="assets/favicon-64.png" />
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0a0a0a" id="themeColorMeta" />
+<script>
+  (function () {
+    var saved = localStorage.getItem('aiva-theme');
+    var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="nav-brand" aria-label="AIVA Browser home">
+      <span class="brand-mark"><img src="assets/aiva-logo-small.png" alt="" width="20" height="20" loading="lazy" /></span>
+      <span class="brand-name">AIVA <em>Browser</em></span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <a href="index.html" class="back-link">← Back to site</a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <button id="themeToggle" class="theme-toggle" aria-label="Switch to light theme">
+      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><line x1="12" y1="2" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+      <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="policy-hero">
+    <div class="section-inner section-inner-narrow">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="tag">Legal</span></div>
+      <h1 class="section-title" style="font-size:clamp(2rem,4vw,2.75rem);">Privacy Policy</h1>
+      <p class="tag policy-updated">Last updated 2026-07-30 · Early-access product — this policy will evolve as features do</p>
+    </div>
+  </section>
+
+  <article class="prose">
+    <div class="callout">
+      <strong>Plain-language summary</strong>
+      AIVA Browser is early-access software from a small team, not a large company with a legal department. This policy describes, honestly and specifically, what the app actually sends off your machine today — mainly your chat messages and the current page's text, sent to OpenAI to power the agent. Everything else described below (face-analysis frames, feedback text) is processed or stored locally on your own computer.
+    </div>
+
+    <h2>What we collect and where it goes</h2>
+    <table>
+      <tr><th>Data</th><th>When</th><th>Where it goes</th></tr>
+      <tr><td>Your chat messages</td><td>When you use the AI chat/agent</td><td>Sent to OpenAI's API to generate a response</td></tr>
+      <tr><td>The current page's visible text &amp; URL</td><td>When you chat while a tab is open</td><td>Sent to OpenAI as context for that request</td></tr>
+      <tr><td>Agent tool actions (e.g. "navigate", "read_page")</td><td>During an agent run</td><td>Sent to OpenAI as part of the conversation; executed locally in the browser</td></tr>
+      <tr><td>Camera frames for fatigue/posture analysis</td><td>Only if you turn the wellness camera on</td><td>Processed locally by on-device models (MediaPipe, YOLOv8) — not uploaded anywhere</td></tr>
+      <tr><td>Feedback you submit (bug reports, ideas, ratings)</td><td>When you use the feedback form</td><td>Saved to a local log file on the machine running the backend — not sent to a third party</td></tr>
+      <tr><td>System volume level</td><td>Read locally via Windows APIs</td><td>Stays on your machine</td></tr>
+    </table>
+
+    <h2>The wellness camera is opt-in and local</h2>
+    <p>Facial-fatigue detection, posture tracking, and related wellness features never turn your camera on automatically. You start them explicitly, and stopping them immediately releases the camera. The video frames are analyzed on your own machine by local models — they are not uploaded to us or to any third party.</p>
+
+    <h2>Browsing history</h2>
+    <p>The app has an internal endpoint that can log page visits, but as of this writing it does not persist that history anywhere — it acknowledges the request and discards it. If that changes, this policy will be updated first.</p>
+
+    <h2>Third parties we use</h2>
+    <ul>
+      <li><strong>OpenAI</strong> — powers the chat and agent features. Messages and page context you send through chat are processed under <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">OpenAI's own privacy policy</a>.</li>
+    </ul>
+    <p>We don't currently use analytics, ad trackers, or session-recording tools in the app.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't require an account or login to use the app.</li>
+      <li>We don't sell your data.</li>
+      <li>We don't ask the agent to enter payment or credential details — see the <a href="index.html#security">Security section</a> for exactly what's enforced today versus what's only an instruction to the model.</li>
+    </ul>
+
+    <h2>Your choices</h2>
+    <p>You can keep the wellness camera off entirely, avoid the AI chat if you don't want page content leaving your machine, and read or delete the local feedback log yourself since it lives on your own computer.</p>
+
+    <h2>Questions</h2>
+    <p>Email <a href="mailto:aivafreelancia2026@gmail.com">aivafreelancia2026@gmail.com</a> with any privacy question, and we'll answer directly — there's no support ticket system yet, just a small team reading its inbox.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner">
+    <div class="divider-row"></div>
+    <div class="footer-bottom">
+      <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+        <a href="privacy.html" style="color:hsl(var(--text));">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="eula.html">EULA</a>
+        <a href="open-source.html">Open Source</a>
+      </div>
+      <div>&copy; <span id="year"></span> AIVA Freelancia. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
