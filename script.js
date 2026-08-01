@@ -1,5 +1,29 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Theme toggle — light ("Organic" cream) is the primary brand look; dark is
+// an alternate. Initial theme (saved choice, else OS preference, else light)
+// is already applied by the inline <head> script before this file loads, to
+// avoid a flash of the wrong theme; this only wires up manual switching.
+const themeColorMeta = document.getElementById('themeColorMeta');
+const themeToggle = document.getElementById('themeToggle');
+
+function syncThemeUI(theme) {
+  if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'dark' ? '#1a1410' : '#f5ead8');
+  if (themeToggle) themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+}
+syncThemeUI(document.documentElement.getAttribute('data-theme'));
+
+function applyThemeToggle() {
+  const root = document.documentElement;
+  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('aiva-theme', next);
+  syncThemeUI(next);
+}
+if (themeToggle) themeToggle.addEventListener('click', applyThemeToggle);
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+if (themeToggleMobile) themeToggleMobile.addEventListener('click', applyThemeToggle);
+
 // Mobile nav drawer — Escape to close, click outside to close, focus management
 // (guarded: simplified pages like the policy docs don't include a drawer)
 const hamburger = document.getElementById('navHamburger');

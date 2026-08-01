@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,19 @@
 <link rel="canonical" href="https://browser.aivafreelancia.in/" />
 <link rel="icon" href="assets/favicon-64.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-<meta name="theme-color" content="#f5ead8" />
+
+<meta name="theme-color" content="#f5ead8" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a1410" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f5ead8" id="themeColorMeta" />
+<script>
+  (function () {
+    var saved = localStorage.getItem('aiva-theme');
+    var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    var meta = document.getElementById('themeColorMeta');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#1a1410' : '#f5ead8');
+  })();
+</script>
 
 <meta property="og:title" content="AIVA Browser — The Browser That Works For You" />
 <meta property="og:description" content="An early-access agentic browser by AIVA Freelancia. Navigate and read/summarize pages today — clicking, form-filling, and multi-step tasks are in development." />
@@ -72,6 +84,10 @@
       <a href="#security" class="plain">Security</a>
       <a href="#roadmap" class="plain">Status</a>
       <a href="#faq" class="plain">FAQ</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><line x1="12" y1="2" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+      </button>
       <a href="#download" class="btn btn-primary btn-sm">Download ↗</a>
     </div>
     <button id="navHamburger" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
@@ -90,6 +106,12 @@
     <a href="#security">Security</a>
     <a href="#roadmap">Status</a>
     <a href="#faq">FAQ</a>
+    <button id="themeToggleMobile" class="theme-toggle-mobile">
+      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><line x1="12" y1="2" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+      <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+      <span class="toggle-label sun-label">Light mode</span>
+      <span class="toggle-label moon-label">Dark mode</span>
+    </button>
     <a href="#download" class="mobile-cta btn">Download</a>
   </nav>
 </header>
@@ -213,12 +235,12 @@
         <h3>It navigates &amp; reads</h3>
         <p>AIVA can go to a page on request and read its visible content — available today.</p>
       </div>
-      <div class="step reveal d3" style="--step-color:var(--color-accent-2-700);">
+      <div class="step reveal d3" style="--step-color:var(--color-accent-2-text);">
         <span class="step-num">03</span>
         <h3>It's learning to act</h3>
         <p>Clicking, filling forms, and chaining multi-step actions across a task are actively in development.</p>
       </div>
-      <div class="step reveal d4" style="--step-color:var(--color-neutral-600);">
+      <div class="step reveal d4" style="--step-color:var(--color-neutral-text);">
         <span class="step-num">04</span>
         <h3>You'll stay in control</h3>
         <p>An enforced confirmation step before consequential actions, plus an audit log of everything the agent does, is planned.</p>
@@ -362,7 +384,7 @@
 
     <div class="status-columns">
       <div class="card elev-sm reveal d1">
-        <div class="status-col-head" style="--col-color:var(--color-accent-700);"><span class="status-col-dot"></span> Available now</div>
+        <div class="status-col-head" style="--col-color:var(--color-accent-text);"><span class="status-col-dot"></span> Available now</div>
         <ul>
           <li>Navigate to a URL on request</li>
           <li>Read &amp; summarize the current page</li>
@@ -371,7 +393,7 @@
         </ul>
       </div>
       <div class="card elev-sm reveal d2">
-        <div class="status-col-head" style="--col-color:var(--color-accent-2-700);"><span class="status-col-dot"></span> In development</div>
+        <div class="status-col-head" style="--col-color:var(--color-accent-2-text);"><span class="status-col-dot"></span> In development</div>
         <ul>
           <li>Clicking &amp; filling forms on a page</li>
           <li>Multi-step task chains across tools</li>
@@ -379,7 +401,7 @@
         </ul>
       </div>
       <div class="card elev-sm reveal d3">
-        <div class="status-col-head" style="--col-color:var(--color-neutral-600);"><span class="status-col-dot"></span> Planned</div>
+        <div class="status-col-head" style="--col-color:var(--color-neutral-text);"><span class="status-col-dot"></span> Planned</div>
         <ul>
           <li>Enforced permission prompts before consequential actions</li>
           <li>Audit log of everything the agent does</li>
