@@ -438,13 +438,26 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-divider);
-  animation: hero-float 6s ease-in-out infinite;
+  animation: hero-float 6s linear infinite;
   animation-delay: 0.7s; /* let the .reveal scroll-in transition (0.6s) finish first, so the two don't fight over transform */
 }
-/* Gentle continuous bob on the hero visual — small, slow, never distracting. */
+/* Gentle continuous bob on the hero visual — small, slow, never distracting.
+   Easing is baked into the keyframe spacing itself (a sine curve sampled
+   every 10%) with linear overall timing, not ease-in-out on a single 0/50/100
+   split — that combination decelerates into and out of the same value at the
+   loop seam, which reads as a stutter/pause rather than smooth motion. */
 @keyframes hero-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(-1px); }
+  20%  { transform: translateY(-3.5px); }
+  30%  { transform: translateY(-6.5px); }
+  40%  { transform: translateY(-9px); }
+  50%  { transform: translateY(-10px); }
+  60%  { transform: translateY(-9px); }
+  70%  { transform: translateY(-6.5px); }
+  80%  { transform: translateY(-3.5px); }
+  90%  { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
 }
 
 .bm-chrome {
