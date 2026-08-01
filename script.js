@@ -1,29 +1,5 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Theme toggle — dark/light, persisted like the AIVA Freelancia site.
-// Initial theme (saved choice, else OS preference, else dark) is already
-// applied by the inline <head> script before this file loads, to avoid
-// a flash of the wrong theme; this only wires up manual switching.
-const themeColorMeta = document.getElementById('themeColorMeta');
-const themeToggle = document.getElementById('themeToggle');
-
-function syncThemeUI(theme) {
-  if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'light' ? '#fafafa' : '#0a0a0a');
-  if (themeToggle) themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-}
-syncThemeUI(document.documentElement.getAttribute('data-theme'));
-
-function applyThemeToggle() {
-  const root = document.documentElement;
-  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  root.setAttribute('data-theme', next);
-  localStorage.setItem('aiva-theme', next);
-  syncThemeUI(next);
-}
-if (themeToggle) themeToggle.addEventListener('click', applyThemeToggle);
-const themeToggleMobile = document.getElementById('themeToggleMobile');
-if (themeToggleMobile) themeToggleMobile.addEventListener('click', applyThemeToggle);
-
 // Mobile nav drawer — Escape to close, click outside to close, focus management
 // (guarded: simplified pages like the policy docs don't include a drawer)
 const hamburger = document.getElementById('navHamburger');
@@ -82,18 +58,21 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
-// FAQ accordion — one open at a time, with aria-expanded kept in sync
+// FAQ accordion — one open at a time, with aria-expanded and the +/× icon kept in sync
 document.querySelectorAll('.faq-item').forEach((item) => {
   const question = item.querySelector('.faq-question');
+  const icon = item.querySelector('.faq-icon');
   question.addEventListener('click', () => {
     const wasOpen = item.classList.contains('open');
     item.closest('.faq-list').querySelectorAll('.faq-item').forEach((other) => {
       other.classList.remove('open');
       other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      other.querySelector('.faq-icon').textContent = '+';
     });
     if (!wasOpen) {
       item.classList.add('open');
       question.setAttribute('aria-expanded', 'true');
+      icon.textContent = '×';
     }
   });
 });

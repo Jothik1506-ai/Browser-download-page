@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,19 +8,7 @@
 <link rel="canonical" href="https://browser.aivafreelancia.in/" />
 <link rel="icon" href="assets/favicon-64.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-
-<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#0a0a0a" id="themeColorMeta" />
-<script>
-  (function () {
-    var saved = localStorage.getItem('aiva-theme');
-    var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    document.documentElement.setAttribute('data-theme', theme);
-    var meta = document.getElementById('themeColorMeta');
-    if (meta) meta.setAttribute('content', theme === 'light' ? '#fafafa' : '#0a0a0a');
-  })();
-</script>
+<meta name="theme-color" content="#f5ead8" />
 
 <meta property="og:title" content="AIVA Browser — The Browser That Works For You" />
 <meta property="og:description" content="An early-access agentic browser by AIVA Freelancia. Navigate and read/summarize pages today — clicking, form-filling, and multi-step tasks are in development." />
@@ -57,9 +45,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
 
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -70,21 +58,21 @@
 
 <!-- ================= NAV ================= -->
 <header class="site-header">
-  <nav id="navPill" class="nav-pill" aria-label="Primary">
-    <a href="#top" class="nav-brand" aria-label="AIVA Browser home">
-      <span class="brand-mark">
-        <img src="assets/aiva-logo-small.png" alt="" width="20" height="20" loading="lazy" />
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="#top" class="nav-brand plain" aria-label="AIVA Browser home">
+      <span class="brand-mark" style="background:var(--color-neutral-100); padding:5px;">
+        <img src="assets/aiva-logo-small.png" alt="" width="24" height="24" loading="lazy" />
       </span>
       <span class="brand-name">AIVA <em>Browser</em></span>
     </a>
-    <span class="nav-sep" aria-hidden="true"></span>
     <div class="nav-links">
-      <a href="#why">Why AIVA</a>
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#security">Security</a>
-      <a href="#roadmap">Status</a>
-      <a href="#faq">FAQ</a>
+      <a href="#why" class="plain">Why AIVA</a>
+      <a href="#how" class="plain">How it works</a>
+      <a href="#features" class="plain">Features</a>
+      <a href="#security" class="plain">Security</a>
+      <a href="#roadmap" class="plain">Status</a>
+      <a href="#faq" class="plain">FAQ</a>
+      <a href="#download" class="btn btn-primary btn-sm">Download ↗</a>
     </div>
     <button id="navHamburger" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -93,24 +81,6 @@
         <rect x="1" y="10.5" width="14" height="1.5" rx=".75" fill="currentColor" />
       </svg>
     </button>
-    <span class="nav-sep" aria-hidden="true"></span>
-    <button id="themeToggle" class="theme-toggle" aria-label="Switch to light theme">
-      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4" />
-        <line x1="12" y1="2" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22" />
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-        <line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" />
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-      </svg>
-      <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-      </svg>
-    </button>
-    <span class="nav-sep" aria-hidden="true"></span>
-    <a href="#download" class="nav-cta ring-grad">
-      Download
-      <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </nav>
 
   <nav id="mobileDrawer" class="mobile-drawer" aria-label="Mobile navigation">
@@ -120,91 +90,35 @@
     <a href="#security">Security</a>
     <a href="#roadmap">Status</a>
     <a href="#faq">FAQ</a>
-    <button id="themeToggleMobile" class="theme-toggle-mobile">
-      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4" />
-        <line x1="12" y1="2" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22" />
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-        <line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" />
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-      </svg>
-      <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-      </svg>
-      <span class="toggle-label sun-label">Light mode</span>
-      <span class="toggle-label moon-label">Dark mode</span>
-    </button>
-    <a href="#download" class="mobile-cta">
-      Download
-      <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <a href="#download" class="mobile-cta btn">Download</a>
   </nav>
 </header>
 
 <main id="main">
 
 <!-- ================= HERO ================= -->
-<section id="top" class="hero noise">
-  <div class="hero-grid-lines" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
+<section id="top" class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="status-chip"><span class="status-chip-dot"></span> AIVA Agentic Browser · Early access</span>
+      <h1 class="hero-title">The browser that<br><span class="accent-text">works for you.</span></h1>
+      <p class="hero-sub">
+        AIVA Browser has an agent built in. Today it can navigate to a page on request
+        and read or summarize what's on it. Clicking, filling forms, and chaining
+        multi-step tasks are actively in development.
+      </p>
 
-  <div class="hero-rings" aria-hidden="true">
-    <span class="ring ring-1"></span>
-    <span class="ring ring-2"></span>
-    <span class="ring ring-3"></span>
-    <span class="ring-dot"></span>
-  </div>
+      <div class="hero-ctas">
+        <a href="https://github.com/Jothik1506-ai/Browser-download-page/releases/download/v0.1.0-beta.2/AIVA.Agentic.Browser-Setup-0.1.0-beta.2.exe" class="btn btn-primary">Download for Windows</a>
+        <a href="#roadmap" class="btn btn-secondary">See what's available today</a>
+      </div>
 
-  <div class="floating-pill" style="top:20%; left:3%;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12L13 2z"/></svg>
-    Reads the current page
-  </div>
-  <div class="floating-pill" style="top:32%; right:3%;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17 10 11 14 15 20 8"/><path d="M14 8h6v6"/></svg>
-    Stop anytime
-  </div>
-  <div class="floating-pill" style="bottom:30%; left:5%;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.97 3.22 9.18 7.69 10.67M12 .5c6.27 0 11.25 4.98 11.25 11.25 0 4.97-3.22 9.18-7.69 10.67"/><path d="M8 22.4V17.2c0-1.1.9-2 2-2M2.5 9h19M2.5 15h19"/></svg>
-    Public source on GitHub
-  </div>
-  <div class="floating-pill" style="bottom:20%; right:5%;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
-    Early access — in progress
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-copy">
-    <div class="status-chip">
-      <span class="status-chip-dot"></span> AIVA Agentic Browser · Early access
-    </div>
-    <h1 class="hero-title">
-      The browser that<br><span class="accent-text">works for you.</span>
-    </h1>
-    <p class="hero-sub">
-      AIVA Browser has an agent built in. Today it can navigate to a page on request
-      and read or summarize what's on it. Clicking, filling forms, and chaining
-      multi-step tasks are actively in development.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="https://github.com/Jothik1506-ai/Browser-download-page/releases/download/v0.1.0-beta.2/AIVA.Agentic.Browser-Setup-0.1.0-beta.2.exe" class="cta-primary ring-grad">
-        Download for Windows
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h7v7H4V3zm9 0h7v7h-7V3zM4 14h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
-      </a>
-      <a href="#roadmap" class="cta-secondary ring-grad">
-        See what's available today
-      </a>
-    </div>
-
-    <div class="trust-row">
-      <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Windows beta available now</span>
-      <span class="trust-sep" aria-hidden="true"></span>
-      <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Public source on GitHub</span>
-      <span class="trust-sep" aria-hidden="true"></span>
-      <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No account needed</span>
-      <span class="trust-sep" aria-hidden="true"></span>
-      <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No payment info requested</span>
-    </div>
+      <div class="trust-row">
+        <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Windows beta available now</span>
+        <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Public source on GitHub</span>
+        <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No account needed</span>
+        <span class="trust-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No payment info requested</span>
+      </div>
     </div>
 
     <!-- ============ SIGNATURE PRODUCT VISUAL ============
@@ -212,65 +126,43 @@
          content, the agent sidebar, a live plan, a real Stop control, and
          a clearly "Planned" approval step. Nothing here is shown as live
          unless it's genuinely shipped today. -->
-    <div class="hero-product">
-      <div class="product-visual-label">
-        <span><span class="product-visual-dot"></span> AIVA Agentic Browser</span>
-        <span>Browser + agent workspace</span>
-      </div>
-    <div class="browser-mock reveal" aria-label="Illustration of the AIVA Agentic Browser interface">
+    <div class="browser-mock reveal" aria-label="Illustration of the AIVA Browser interface">
       <div class="bm-chrome">
         <div class="bm-dots"><span></span><span></span><span></span></div>
-        <div class="bm-tabs">
-          <span class="bm-tab bm-tab-active">Solar power — Wikipedia</span>
-          <span class="bm-tab">New tab</span>
-        </div>
-        <div class="bm-address-bar">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-          en.wikipedia.org/wiki/Solar_power
-        </div>
+        <span class="bm-tab">Solar power — Wikipedia</span>
       </div>
+      <div class="bm-address-bar">en.wikipedia.org/wiki/Solar_power</div>
       <div class="bm-body">
         <div class="bm-page">
-          <div class="bm-page-kicker">ENERGY</div>
+          <div class="card-kicker" style="margin-bottom:6px;">ENERGY</div>
           <div class="bm-page-title">Solar power</div>
-          <div class="bm-page-line"></div>
           <div class="bm-page-line"></div>
           <div class="bm-page-line short"></div>
           <div class="bm-page-image"></div>
-          <div class="bm-page-line"></div>
-          <div class="bm-page-line short"></div>
+          <div class="bm-page-line" style="width:80%;"></div>
         </div>
         <aside class="bm-sidebar">
           <div class="bm-sidebar-header">
-            <span class="bm-sidebar-brand"><img src="assets/aiva-logo-small.png" alt="" width="16" height="16" /> AIVA Agent</span>
-            <span class="bm-stop-btn">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1.5"/></svg>
-              Stop
-            </span>
+            <span class="bm-sidebar-brand">AIVA Agent</span>
+            <span class="tag tag-outline">Stop</span>
           </div>
-          <div class="bm-status">
-            <span class="bm-status-dot"></span> Reading page — 1,240 words
-          </div>
-          <div class="bm-plan">
-            <div class="bm-plan-label">Plan</div>
-            <div class="bm-plan-step bm-plan-done">
-              <span class="bm-plan-icon">✓</span> Read &amp; summarize this page
-            </div>
-            <div class="bm-plan-step bm-plan-upcoming">
-              <span class="bm-plan-icon">◌</span> Fill the newsletter form
-              <span class="bm-badge bm-badge-dev">In development</span>
-            </div>
+          <div class="bm-status"><span class="bm-status-dot"></span> Reading page — 1,240 words</div>
+          <div class="card-kicker" style="margin-bottom:8px;">PLAN</div>
+          <div class="tag tag-accent-2 bm-plan-step">Read &amp; summarize this page</div>
+          <div class="tag tag-neutral bm-plan-step" style="display:block;">
+            Fill the newsletter form
+            <div class="bm-plan-note">In development</div>
           </div>
           <div class="bm-approval">
-            <span class="bm-badge bm-badge-planned">Planned</span>
+            <div class="card-kicker" style="margin-bottom:8px;">PLANNED</div>
             <p>A confirmation step will appear here before the agent takes a consequential action.</p>
             <div class="bm-approval-btns">
-              <span>Cancel</span><span>Approve</span>
+              <span class="btn btn-secondary">Cancel</span>
+              <span class="btn btn-secondary">Approve</span>
             </div>
           </div>
         </aside>
       </div>
-    </div>
     </div>
   </div>
 </section>
@@ -278,44 +170,37 @@
 <!-- ================= WHY AIVA ================= -->
 <section id="why" class="section">
   <div class="section-inner">
+    <p class="eyebrow reveal">Why AIVA</p>
     <div class="section-head">
-      <div class="reveal">
-        <div class="eyebrow"><span class="eyebrow-line"></span><span class="tag">Why AIVA</span></div>
-        <h2 class="section-title">Browsers got faster.<br>They never got <em>smarter</em>.</h2>
-      </div>
+      <h2 class="section-title reveal">Browsers got faster.<br>They never got <em>smarter</em>.</h2>
       <p class="section-lede reveal d2">Every tab you open is still a task you finish yourself — click by click, form by form. AIVA is being built to turn intent into action, without handing over control of what happens on your machine.</p>
     </div>
 
     <div class="card-grid card-grid-3">
-      <div class="glass-card reveal d1">
-        <span class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12L13 2z"/></svg></span>
-        <h3>Hours back, not tabs</h3>
-        <p>Delegate the parts of browsing that don't need you — starting today with reading and summarizing pages, with clicking and form-filling actively in development.</p>
+      <div class="card elev-sm reveal d1">
+        <span class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12L13 2z"/></svg></span>
+        <h3 class="card-title">Hours back, not tabs</h3>
+        <p class="card-body">Delegate the parts of browsing that don't need you — starting today with reading and summarizing pages, with clicking and form-filling actively in development.</p>
       </div>
-      <div class="glass-card reveal d2">
-        <span class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
-        <h3>Built with limits in mind</h3>
-        <p>The agent is instructed to never enter payments or credentials without asking. A hard, enforced confirmation step before consequential actions is on the roadmap.</p>
+      <div class="card elev-sm reveal d2">
+        <span class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+        <h3 class="card-title">Built with limits in mind</h3>
+        <p class="card-body">The agent is instructed to never enter payments or credentials without asking. A hard, enforced confirmation step before consequential actions is on the roadmap.</p>
       </div>
-      <div class="glass-card reveal d3">
-        <span class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
-        <h3>Still just a browser</h3>
-        <p>Fast, familiar, Chromium-based. The agent is a layer you can lean on or ignore — it never gets in the way of ordinary browsing.</p>
+      <div class="card elev-sm reveal d3">
+        <span class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+        <h3 class="card-title">Still just a browser</h3>
+        <p class="card-body">Fast, familiar, Chromium-based. The agent is a layer you can lean on or ignore — it never gets in the way of ordinary browsing.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= HOW IT WORKS ================= -->
-<section id="how" class="section section-alt">
-  <div class="hero-grid-lines faint" aria-hidden="true"></div>
-  <div class="section-inner">
-    <div class="section-head section-head-center">
-      <div class="reveal">
-        <div class="eyebrow eyebrow-center"><span class="eyebrow-line"></span><span class="tag">How it works</span></div>
-        <h2 class="section-title">Where the agent stands today.</h2>
-      </div>
-    </div>
+<section id="how" class="section section-alt" style="text-align:center;">
+  <div class="section-inner section-inner-narrow">
+    <p class="eyebrow eyebrow-center reveal">How it works</p>
+    <h2 class="section-title reveal" style="margin-bottom:3.5rem;">Where the agent stands today.</h2>
 
     <div class="steps">
       <div class="step reveal d1">
@@ -328,12 +213,12 @@
         <h3>It navigates &amp; reads</h3>
         <p>AIVA can go to a page on request and read its visible content — available today.</p>
       </div>
-      <div class="step reveal d3">
+      <div class="step reveal d3" style="--step-color:var(--color-accent-2-700);">
         <span class="step-num">03</span>
         <h3>It's learning to act</h3>
         <p>Clicking, filling forms, and chaining multi-step actions across a task are actively in development.</p>
       </div>
-      <div class="step reveal d4">
+      <div class="step reveal d4" style="--step-color:var(--color-neutral-600);">
         <span class="step-num">04</span>
         <h3>You'll stay in control</h3>
         <p>An enforced confirmation step before consequential actions, plus an audit log of everything the agent does, is planned.</p>
@@ -345,50 +230,48 @@
 <!-- ================= FEATURES ================= -->
 <section id="features" class="section">
   <div class="section-inner">
+    <p class="eyebrow reveal">Features</p>
     <div class="section-head">
-      <div class="reveal">
-        <div class="eyebrow"><span class="eyebrow-line"></span><span class="tag">Features</span></div>
-        <h2 class="section-title">What's real today —<br>and what's <em>next</em>.</h2>
-      </div>
+      <h2 class="section-title reveal">What's real today —<br>and what's <em>next</em>.</h2>
       <p class="section-lede reveal d2">Every card below is labeled honestly. Nothing is marked "available now" unless it's actually shipped.</p>
     </div>
 
     <div class="feature-bento">
-      <div class="glass-card feature-wide reveal d1">
-        <span class="feature-badge feature-badge-live">Available now</span>
-        <h3>Read &amp; summarize the page</h3>
-        <p>Ask AIVA about the page you're on, or tell it to open a URL — it reads the visible content and can summarize or answer questions about it, narrating each navigation step.</p>
+      <div class="card elev-sm reveal d1">
+        <span class="tag tag-accent">Available now</span>
+        <h3 class="card-title">Read &amp; summarize the page</h3>
+        <p class="card-body">Ask AIVA about the page you're on, or tell it to open a URL — it reads the visible content and can summarize or answer questions about it, narrating each navigation step.</p>
       </div>
-      <div class="glass-card reveal d2">
-        <span class="feature-badge feature-badge-live">Available now</span>
-        <h3>Stop, anytime</h3>
-        <p>A visible Stop control and a 14-step hard cap end an in-progress run instantly — no silent, open-ended automation.</p>
+      <div class="card elev-sm reveal d2">
+        <span class="tag tag-accent">Available now</span>
+        <h3 class="card-title">Stop, anytime</h3>
+        <p class="card-body">A visible Stop control and a 14-step hard cap end an in-progress run instantly — no silent, open-ended automation.</p>
       </div>
-      <div class="glass-card reveal d3">
-        <span class="feature-badge feature-badge-dev">In development</span>
-        <h3>Clicking &amp; form-filling</h3>
-        <p>Filling inputs the way a real user types, so modern framework-driven forms register the change correctly. Not yet reliable enough to call finished.</p>
+      <div class="card elev-sm reveal d3">
+        <span class="tag tag-neutral">In development</span>
+        <h3 class="card-title">Clicking &amp; form-filling</h3>
+        <p class="card-body">Filling inputs the way a real user types, so modern framework-driven forms register the change correctly. Not yet reliable enough to call finished.</p>
       </div>
-      <div class="glass-card feature-wide reveal d1">
-        <span class="feature-badge feature-badge-dev">In development</span>
-        <h3>Multi-step task chains</h3>
-        <p>Chaining navigation, reading, clicking, and filling into one instruction the agent plans and executes across several steps.</p>
+      <div class="card elev-sm reveal d1">
+        <span class="tag tag-neutral">In development</span>
+        <h3 class="card-title">Multi-step task chains</h3>
+        <p class="card-body">Chaining navigation, reading, clicking, and filling into one instruction the agent plans and executes across several steps.</p>
         <div class="tool-chips">
-          <span class="tool-chip tool-chip-live">navigate</span>
-          <span class="tool-chip tool-chip-live">read_page</span>
-          <span class="tool-chip tool-chip-dev">click_element</span>
-          <span class="tool-chip tool-chip-dev">fill_input</span>
+          <span class="tag tag-accent tag-mono">navigate</span>
+          <span class="tag tag-accent tag-mono">read_page</span>
+          <span class="tag tag-outline tag-mono">click_element</span>
+          <span class="tag tag-outline tag-mono">fill_input</span>
         </div>
       </div>
-      <div class="glass-card feature-wide reveal d2">
-        <span class="feature-badge feature-badge-live">Available now</span>
-        <h3>Wellness, built in</h3>
-        <p>Opt-in fatigue detection, posture tracking, and guided breaks sit alongside the agent — the camera stays off until you turn it on.</p>
+      <div class="card elev-sm reveal d2">
+        <span class="tag tag-accent">Available now</span>
+        <h3 class="card-title">Wellness, built in</h3>
+        <p class="card-body">Opt-in fatigue detection, posture tracking, and guided breaks sit alongside the agent — the camera stays off until you turn it on.</p>
       </div>
-      <div class="glass-card reveal d3">
-        <span class="feature-badge feature-badge-dev">In development</span>
-        <h3>Multi-tab awareness</h3>
-        <p>Opening, switching, and closing tabs as part of a task, so the agent can work across more than one page.</p>
+      <div class="card elev-sm reveal d3">
+        <span class="tag tag-neutral">In development</span>
+        <h3 class="card-title">Multi-tab awareness</h3>
+        <p class="card-body">Opening, switching, and closing tabs as part of a task, so the agent can work across more than one page.</p>
       </div>
     </div>
   </div>
@@ -396,108 +279,90 @@
 
 <!-- ================= SECURITY ================= -->
 <section id="security" class="section section-alt">
-  <div class="hero-grid-lines faint" aria-hidden="true"></div>
   <div class="section-inner security-grid">
-    <div class="reveal">
-      <div class="eyebrow"><span class="eyebrow-line"></span><span class="tag">Security &amp; Trust</span></div>
-      <h2 class="section-title">An agent with hands<br>should have <em>limits</em>.</h2>
-      <p class="section-lede" style="margin-top:1.5rem;">Here's exactly what's enforced today, what's only an instruction to the model, and what's still on the roadmap.</p>
+    <div>
+      <p class="eyebrow reveal">Security &amp; trust</p>
+      <h2 class="section-title reveal">An agent with hands<br>should have <em>limits</em>.</h2>
+      <p class="section-lede reveal d1" style="margin:1.2rem 0 2.5rem; max-width:none;">Here's exactly what's enforced today, what's only an instruction to the model, and what's still on the roadmap.</p>
 
-      <ul class="check-list">
+      <ul class="check-list reveal d2">
         <li>
-          <span class="check-icon check-icon-live"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-icon check-icon-live">✓</span>
           <div><h3>Page content is reference, not instructions <span class="badge-inline badge-inline-live">Today</span></h3><p>The current page's visible text and URL are sent to the model only as context — never executed or treated as a command.</p></div>
         </li>
         <li>
-          <span class="check-icon check-icon-live"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-icon check-icon-live">✓</span>
           <div><h3>Bounded, cancellable runs <span class="badge-inline badge-inline-live">Today</span></h3><p>Every agent run has a hard 14-step cap and a visible Stop control — no silent, open-ended automation.</p></div>
         </li>
         <li>
-          <span class="check-icon check-icon-soft"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2"/></svg></span>
+          <span class="check-icon check-icon-soft">!</span>
           <div><h3>Told not to touch payments or credentials <span class="badge-inline badge-inline-soft">Instruction, not enforced</span></h3><p>The system prompt tells the agent never to enter payment details or credentials. That's model guidance today — not yet a hard, code-enforced block.</p></div>
         </li>
         <li>
-          <span class="check-icon check-icon-planned"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/></svg></span>
+          <span class="check-icon check-icon-planned">○</span>
           <div><h3>Enforced approval &amp; audit log <span class="badge-inline badge-inline-planned">Planned</span></h3><p>A UI confirmation step before consequential actions, and an audit log of everything the agent does, are planned but not built yet.</p></div>
         </li>
         <li>
-          <span class="check-icon check-icon-live"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-icon check-icon-live">✓</span>
           <div><h3>Public source on GitHub <span class="badge-inline badge-inline-live">Today</span></h3><p>The code is public and viewable today. A formal open-source license hasn't been published yet, so treat it as source-available for now.</p></div>
         </li>
       </ul>
     </div>
 
-    <div class="reveal d2">
-      <div class="terminal-card glass-card">
-        <div class="terminal-bar">
-          <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-          <span class="terminal-title tag">backend/server.py — system prompt excerpt</span>
-        </div>
-        <div class="terminal-body">
-          <p class="t-muted">// actual instruction given to the model</p>
-          <p class="t-default">"Do not enter passwords, payment</p>
-          <p class="t-default">&nbsp;details, or other sensitive personal</p>
-          <p class="t-default">&nbsp;data without explicit confirmation."</p>
-          <p class="t-info">[status] model instruction — active today</p>
-          <p class="t-warn">[status] code-enforced block — planned</p>
-        </div>
+    <div class="card terminal-card elev-md reveal d3">
+      <div class="terminal-bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="terminal-title">backend/server.py — system prompt excerpt</span>
       </div>
+      <pre class="terminal-body">// actual instruction given to the model
+"Do not enter passwords, payment
+ details, or other sensitive personal
+ data without explicit confirmation."
+
+[status] model instruction — active today
+[status] code-enforced block — planned</pre>
     </div>
   </div>
 </section>
 
 <!-- ================= DOWNLOAD ================= -->
 <section id="download" class="section download-section">
-  <div class="hero-glow" style="opacity:.6" aria-hidden="true"></div>
-  <div class="section-inner" style="text-align:center;">
-    <div class="reveal">
-      <div class="eyebrow eyebrow-center"><span class="eyebrow-line"></span><span class="tag">Download</span></div>
-      <h2 class="section-title">Get the Windows beta.</h2>
-      <p class="section-lede" style="margin:1.25rem auto 0;">v0.1.0-beta.2 is an early, unsigned build — Windows SmartScreen may warn on first run; click "More info" → "Run anyway" if you trust the source. macOS and Linux builds are in progress.</p>
-    </div>
+  <p class="eyebrow eyebrow-center reveal">Download</p>
+  <h2 class="section-title reveal">Get the Windows beta.</h2>
+  <p class="section-lede reveal d1" style="margin:1.1rem auto 2.25rem; max-width:620px;">v0.1.0-beta.2 is an early, unsigned build — Windows SmartScreen may warn on first run; click "More info" → "Run anyway" if you trust the source. macOS and Linux builds are in progress.</p>
 
-    <div class="download-buttons reveal d1" style="margin-top:2rem;">
-      <a href="https://github.com/Jothik1506-ai/Browser-download-page/releases/download/v0.1.0-beta.2/AIVA.Agentic.Browser-Setup-0.1.0-beta.2.exe" class="cta-primary ring-grad download-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h7v7H4V3zm9 0h7v7h-7V3zM4 14h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
-        <span><small>v0.1.0-beta.2</small>Windows</span>
-      </a>
-      <button type="button" class="cta-secondary download-btn" disabled aria-label="macOS build — coming soon, not yet available">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.462 2.096-1.19 2.802-.78.79-2.05 1.4-3.05 1.32-.12-1.09.46-2.23 1.16-2.93.78-.8 2.14-1.4 3.08-1.19zM20.62 17.36c-.5 1.14-.74 1.66-1.38 2.66-.9 1.4-2.16 3.14-3.72 3.16-1.4.02-1.76-.9-3.66-.9-1.9 0-2.3.88-3.68.92-1.5.05-2.65-1.5-3.55-2.9-1.94-3-3.42-8.5-1.43-12.2 1-1.83 2.75-2.99 4.66-3.02 1.44-.02 2.8.97 3.66.97.86 0 2.5-1.2 4.22-1.02.72.03 2.74.29 4.04 2.2-.1.06-2.41 1.4-2.39 4.2.03 3.34 2.94 4.46 2.98 4.48-.03.1-.47 1.6-1.55 3.15z"/></svg>
-        <span><small>Coming soon</small>macOS</span>
-      </button>
-      <button type="button" class="cta-secondary download-btn" disabled aria-label="Linux build — coming soon, not yet available">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3.28A6 6 0 0 0 4 15.5V17a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5v-1.5a6 6 0 0 0-3-5.22V7a5 5 0 0 0-5-5zm-3 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
-        <span><small>Coming soon</small>Linux</span>
-      </button>
-    </div>
-    <p class="version-tag tag reveal d3">v0.1.0-beta.2 · ≈198 MB · Windows 10/11 (64-bit) · <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline;">or run it from source</a></p>
+  <div class="download-buttons reveal d2">
+    <a href="https://github.com/Jothik1506-ai/Browser-download-page/releases/download/v0.1.0-beta.2/AIVA.Agentic.Browser-Setup-0.1.0-beta.2.exe" class="btn btn-primary download-btn">
+      <small>v0.1.0-beta.2</small><span>Windows</span>
+    </a>
+    <button type="button" class="btn btn-secondary download-btn" disabled aria-label="macOS build — coming soon, not yet available">
+      <small>Coming soon</small><span>macOS</span>
+    </button>
+    <button type="button" class="btn btn-secondary download-btn" disabled aria-label="Linux build — coming soon, not yet available">
+      <small>Coming soon</small><span>Linux</span>
+    </button>
+  </div>
+  <p class="version-tag reveal d3">v0.1.0-beta.2 · ≈198 MB · Windows 10/11 (64-bit) · <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" target="_blank" rel="noopener noreferrer">or run it from source</a></p>
 
-    <div id="demo" class="demo-frame glass-card reveal d3">
-      <div class="demo-pending">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        <p><strong>Demo video — recording in progress.</strong><br>We'll publish a captioned walkthrough with a full text transcript here. Until then, here's what AIVA can do today: navigate to a page you name, and read or summarize what's on it.</p>
-      </div>
+  <div id="demo" class="card elev-sm demo-frame reveal d3">
+    <div class="demo-pending">
+      <span class="demo-pending-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+      <h3>Demo video — recording in progress.</h3>
+      <p>We'll publish a captioned walkthrough with a full text transcript here. Until then, here's what AIVA can do today: navigate to a page you name, and read or summarize what's on it.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= ROADMAP / STATUS ================= -->
-<section id="roadmap" class="section section-alt">
-  <div class="hero-grid-lines faint" aria-hidden="true"></div>
+<!-- ================= STATUS BOARD ================= -->
+<section id="roadmap" class="section section-alt" style="text-align:center;">
   <div class="section-inner">
-    <div class="section-head section-head-center">
-      <div class="reveal">
-        <div class="eyebrow eyebrow-center"><span class="eyebrow-line"></span><span class="tag">Status</span></div>
-        <h2 class="section-title">Available now, in development, and planned.</h2>
-        <p class="section-lede" style="margin:1rem auto 0;">Built in the open — this list changes as work lands, not as a marketing promise.</p>
-      </div>
-    </div>
+    <p class="eyebrow eyebrow-center reveal">Status</p>
+    <h2 class="section-title reveal" style="margin-bottom:0.9rem;">Available now, in development, and planned.</h2>
+    <p class="section-lede reveal d1" style="margin:0 auto 3rem; max-width:560px; font-size:15.5px;">Built in the open — this list changes as work lands, not as a marketing promise.</p>
 
     <div class="status-columns">
-      <div class="status-col reveal d1">
-        <div class="status-col-head status-col-live">
-          <span class="status-col-dot"></span> Available now
-        </div>
+      <div class="card elev-sm reveal d1">
+        <div class="status-col-head" style="--col-color:var(--color-accent-700);"><span class="status-col-dot"></span> Available now</div>
         <ul>
           <li>Navigate to a URL on request</li>
           <li>Read &amp; summarize the current page</li>
@@ -505,20 +370,16 @@
           <li>Wellness tools — fatigue, posture, guided breaks (opt-in)</li>
         </ul>
       </div>
-      <div class="status-col reveal d2">
-        <div class="status-col-head status-col-dev">
-          <span class="status-col-dot"></span> In development
-        </div>
+      <div class="card elev-sm reveal d2">
+        <div class="status-col-head" style="--col-color:var(--color-accent-2-700);"><span class="status-col-dot"></span> In development</div>
         <ul>
           <li>Clicking &amp; filling forms on a page</li>
           <li>Multi-step task chains across tools</li>
           <li>Multi-tab operation (open, switch, close)</li>
         </ul>
       </div>
-      <div class="status-col reveal d3">
-        <div class="status-col-head status-col-planned">
-          <span class="status-col-dot"></span> Planned
-        </div>
+      <div class="card elev-sm reveal d3">
+        <div class="status-col-head" style="--col-color:var(--color-neutral-600);"><span class="status-col-dot"></span> Planned</div>
         <ul>
           <li>Enforced permission prompts before consequential actions</li>
           <li>Audit log of everything the agent does</li>
@@ -530,53 +391,51 @@
 </section>
 
 <!-- ================= FAQ ================= -->
-<section id="faq" class="section">
+<section id="faq" class="section" style="text-align:center;">
   <div class="section-inner section-inner-narrow">
-    <div class="section-head-center reveal">
-      <div class="eyebrow eyebrow-center"><span class="eyebrow-line"></span><span class="tag">FAQ</span></div>
-      <h2 class="section-title">Common questions</h2>
-    </div>
+    <p class="eyebrow eyebrow-center reveal">FAQ</p>
+    <h2 class="section-title reveal" style="margin-bottom:3rem;">Common questions</h2>
 
     <div class="faq-list reveal d2">
       <div class="faq-item open">
         <button class="faq-question" aria-expanded="true" aria-controls="faq-answer-1">
           What can AIVA actually do right now?
-          <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="faq-icon">×</span>
         </button>
         <div class="faq-answer" id="faq-answer-1"><div class="faq-answer-inner">Today: navigate to a page you specify, and read or summarize what's on it. In development: clicking, filling forms, and chaining multi-step tasks. Planned: enforced permission prompts and an audit log before the agent takes consequential actions.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
           Is AIVA a replacement for my current browser?
-          <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer" id="faq-answer-2"><div class="faq-answer-inner">Yes. AIVA is a full Chromium-based browser with tabs and browsing history — the agent is an added layer, not a separate app you switch to.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
           Can the agent make purchases or enter my passwords without asking?
-          <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer" id="faq-answer-3"><div class="faq-answer-inner">Not today — payment and account flows aren't wired up at all, and the model is instructed never to enter credentials. A hard, code-enforced confirmation step is planned, not yet built. You can stop any run instantly with the Stop control.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
           What data does AIVA send to the AI model?
-          <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer" id="faq-answer-4"><div class="faq-answer-inner">Only what's needed for the task at hand: the current page's visible text and URL when you're chatting with the agent, plus the tool actions it takes. See our Privacy Policy for full details.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
           Is AIVA open source?
-          <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer" id="faq-answer-5"><div class="faq-answer-inner">The code is public on GitHub today, but we haven't published a formal open-source license yet — treat it as source-available for now. Publishing a real license is next on our list.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
           When can I download it?
-          <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer" id="faq-answer-6"><div class="faq-answer-inner">Windows: today, as an early beta — see the <a href="#download">Download section</a>. It's unsigned, so SmartScreen may warn on first run. macOS and Linux don't have a packaged build yet; watch the GitHub repo for release updates.</div></div>
       </div>
@@ -586,13 +445,10 @@
 
 <!-- ================= CTA STRIP ================= -->
 <section class="cta-strip">
-  <div class="hero-glow" style="opacity:.5" aria-hidden="true"></div>
-  <div class="section-inner reveal" style="text-align:center; position:relative;">
-    <h2 class="section-title" style="font-size:clamp(1.75rem,3.5vw,2.5rem);">Curious where this goes next?</h2>
-    <div class="hero-ctas" style="margin-top:2rem; justify-content:center;">
-      <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" class="cta-primary ring-grad" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-      <a href="#roadmap" class="cta-secondary ring-grad">Read the status board</a>
-    </div>
+  <h2 class="section-title reveal" style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:1.75rem;">Curious where this goes next?</h2>
+  <div class="hero-ctas reveal d1" style="justify-content:center;">
+    <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    <a href="#roadmap" class="btn btn-secondary">Read the status board</a>
   </div>
 </section>
 
@@ -600,62 +456,58 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="site-footer">
-  <div class="section-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-brand" style="pointer-events:none;">
-          <span class="brand-mark"><img src="assets/aiva-logo-small.png" alt="" width="22" height="22" loading="lazy" /></span>
-          <span class="brand-name" style="font-size:1.25rem;">AIVA <em>Browser</em></span>
-        </div>
-        <p class="footer-blurb">An early-access, agentic browser by AIVA Freelancia. Built in the open — never claiming more than it does.</p>
-        <div class="social-row">
-          <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" aria-label="AIVA Browser on GitHub" class="social-btn" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.97 3.22 9.18 7.69 10.67.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.34-3.79-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.11 1.16a10.8 10.8 0 0 1 5.66 0c2.16-1.46 3.11-1.16 3.11-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.63 5.28-5.14 5.56.4.35.76 1.04.76 2.09v3.09c0 .3.21.65.78.54 4.46-1.49 7.68-5.7 7.68-10.67C23.25 5.48 18.27.5 12 .5Z"/></svg></a>
-        </div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand" style="pointer-events:none;">
+        <span class="brand-mark" style="background:var(--color-neutral-100); padding:5px;"><img src="assets/aiva-logo-small.png" alt="" width="26" height="26" loading="lazy" /></span>
+        <span class="brand-name" style="font-size:1.1rem;">AIVA <em>Browser</em></span>
       </div>
-
-      <div class="footer-col">
-        <div class="tag footer-col-title">Product</div>
-        <ul>
-          <li><a href="#why">Why AIVA</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#security">Security</a></li>
-          <li><a href="#roadmap">Status</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="tag footer-col-title">Resources</div>
-        <ul>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#demo">Demo</a></li>
-          <li><a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" target="_blank" rel="noopener noreferrer">Source code</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="tag footer-col-title">Legal</div>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="eula.html">EULA</a></li>
-          <li><a href="open-source.html">Open Source Notices</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="tag footer-col-title">Company</div>
-        <ul>
-          <li><a href="https://aivafreelancia.in" target="_blank" rel="noopener noreferrer">AIVA Freelancia</a></li>
-          <li><a href="mailto:aivafreelancia2026@gmail.com">Contact</a></li>
-        </ul>
+      <p class="footer-blurb">An early-access, agentic browser by AIVA Freelancia. Built in the open — never claiming more than it does.</p>
+      <div class="social-row">
+        <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" aria-label="AIVA Browser on GitHub" class="social-btn" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.97 3.22 9.18 7.69 10.67.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.34-3.79-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.11 1.16a10.8 10.8 0 0 1 5.66 0c2.16-1.46 3.11-1.16 3.11-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.63 5.28-5.14 5.56.4.35.76 1.04.76 2.09v3.09c0 .3.21.65.78.54 4.46-1.49 7.68-5.7 7.68-10.67C23.25 5.48 18.27.5 12 .5Z"/></svg></a>
       </div>
     </div>
 
-    <div class="divider-row"></div>
-
-    <div class="footer-bottom">
-      <a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser/commits/main" class="status-row" target="_blank" rel="noopener noreferrer"><span class="status-dot"></span>Built in the open — see recent commits</a>
-      <div>&copy; <span id="year"></span> AIVA Freelancia. All rights reserved.</div>
-      <div class="tag">BROWSER · PRE-RELEASE · Made by Team AIVA</div>
+    <div class="footer-col">
+      <div class="footer-col-title">Product</div>
+      <ul>
+        <li><a href="#why">Why AIVA</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#roadmap">Status</a></li>
+      </ul>
     </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Resources</div>
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="https://github.com/Jothik1506-ai/Aiva-Agentic_Browser" target="_blank" rel="noopener noreferrer">Source code</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="eula.html">EULA</a></li>
+        <li><a href="open-source.html">Open Source Notices</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="https://aivafreelancia.in" target="_blank" rel="noopener noreferrer">AIVA Freelancia</a></li>
+        <li><a href="mailto:aivafreelancia2026@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="https://github.com/Jothik1506-ai/Browser-download-page/commits/main" class="status-row" target="_blank" rel="noopener noreferrer"><span class="status-dot"></span>Built in the open — see recent commits</a>
+    <div>&copy; <span id="year"></span> AIVA Freelancia. All rights reserved.</div>
+    <div>BROWSER · PRE-RELEASE · Made by Team AIVA</div>
   </div>
 </footer>
 
