@@ -504,7 +504,8 @@ img { max-width: 100%; display: block; }
 
 .card-grid { display: grid; gap: 22px; }
 .card-grid-3 { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 860px) { .card-grid-3 { grid-template-columns: 1fr; } }
+.card-grid-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) { .card-grid-3, .card-grid-2 { grid-template-columns: 1fr; } }
 
 /* ── How it works ───────────────────────────────────────────────── */
 
